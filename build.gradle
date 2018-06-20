@@ -1,0 +1,52 @@
+ext {
+    compileSdkVersion = 27
+    applicationId = "com.unisbadri.lessutils"
+    minSdkVersion = 15
+    targetSdkVersion = 27
+    versionCode = 1
+    versionName = "1.0"
+    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+    appMinifyEnabled = false
+    libraryMinifyEnabled = false
+
+    proguardFile1 = "proguard-android.txt"
+    proguardFile2 = "proguard-rules.pro"
+
+    libsDirectory = "libs"
+    libsDirectoryIncludes = ['*.jar']
+
+    compileModuleName = ":library"
+
+    supportLibraryVersion = "27.1.1"
+
+    jUnitVersion = "4.12"
+    testRunnerVersion = "1.0.2"
+    espressoVersion = "3.0.2"
+}
+
+buildscript {
+    ext.gradleVersion = "3.1.2"
+    ext.kotlinVersion = "1.2.41"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
