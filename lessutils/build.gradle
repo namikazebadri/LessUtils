@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+
+        testInstrumentationRunner rootProject.testInstrumentationRunner
+    }
+    buildTypes {
+        release {
+            minifyEnabled rootProject.libraryMinifyEnabled
+            proguardFiles getDefaultProguardFile(rootProject.proguardFile1), rootProject.proguardFile2
+        }
+    }
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'sample-library'
+
+    publishedGroupId = 'com.example.sample'
+    libraryName = 'SampleLibrary'
+    artifact = 'sample-library' //This artifact name should be the same with library module name
+
+    libraryDescription = 'Simple, clean and short description'
+
+    siteUrl = 'https://github.com/username/sample-library'
+    gitUrl = 'https://github.com/username/sample-library.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'your_id'
+    developerName = 'your_name'
+    developerEmail = 'your_email'
+    organization = 'your_organization' // if you push to organization's repository.
+    licenseName = 'The Apache Software License, Version 2.0'  //Example for license
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+dependencies {
+    implementation fileTree(dir: rootProject.libsDirectory, include: rootProject.libsDirectoryIncludes)
+
+    implementation "com.android.support:support-annotations:$supportLibraryVersion"
+
+    testImplementation "junit:junit:$jUnitVersion"
+    androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="empty_text"></string>
+    <string name="placeHolder_text">---</string>
+    <string name="placeHolder_text_long">---------</string>
+
+    <string name="log_tag">LessUtils</string>
+    <string name="throwable_log_signature">Throwable Exists!!</string>
+</resources>
