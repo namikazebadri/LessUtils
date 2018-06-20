@@ -17,7 +17,7 @@ public class StringUtils
     @NonNull
     public static String emptyString()
     {
-        return fromResource(R.string.lessEmptyText);
+        return fromResource(R.string.empty_text);
     }
 
     @NonNull

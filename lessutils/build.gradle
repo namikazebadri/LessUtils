@@ -1,6 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -23,26 +21,26 @@ android {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'sample-library'
+    bintrayName = 'lessutils'
 
-    publishedGroupId = 'com.example.sample'
-    libraryName = 'SampleLibrary'
-    artifact = 'sample-library' //This artifact name should be the same with library module name
+    publishedGroupId = 'com.unisbadri.android'
+    libraryName = 'LessUtils'
+    artifact = 'lessutils'
 
-    libraryDescription = 'Simple, clean and short description'
+    libraryDescription = 'Android small utilities.'
 
-    siteUrl = 'https://github.com/username/sample-library'
-    gitUrl = 'https://github.com/username/sample-library.git'
+    siteUrl = 'https://github.com/namikazebadri/LessUtils'
+    gitUrl = 'https://github.com/namikazebadri/LessUtils.git'
 
     libraryVersion = '0.1.0'
 
-    developerId = 'your_id'
-    developerName = 'your_name'
-    developerEmail = 'your_email'
-    organization = 'your_organization' // if you push to organization's repository.
-    licenseName = 'The Apache Software License, Version 2.0'  //Example for license
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    developerId = 'namikazebadri'
+    developerName = 'Unis Badri'
+    developerEmail = 'namikaze.badri@gmail.com'
+    organization = ''
+    licenseName = 'The MIT License'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
 }
 
 dependencies {
@@ -54,3 +52,6 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
 }
+
+apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/install.gradle'
+apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/bintray.gradle'
