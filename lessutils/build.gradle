@@ -20,27 +20,7 @@ android {
 }
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'lessutils'
 
-    publishedGroupId = 'com.unisbadri.android'
-    libraryName = 'LessUtils'
-    artifact = 'lessutils'
-
-    libraryDescription = 'Android small utilities.'
-
-    siteUrl = 'https://github.com/namikazebadri/LessUtils'
-    gitUrl = 'https://github.com/namikazebadri/LessUtils.git'
-
-    libraryVersion = '0.1.0'
-
-    developerId = 'namikazebadri'
-    developerName = 'Unis Badri'
-    developerEmail = 'namikaze.badri@gmail.com'
-    organization = ''
-    licenseName = 'The MIT License'
-    licenseUrl = 'https://opensource.org/licenses/MIT'
-    allLicenses = ["MIT"]
 }
 
 dependencies {
@@ -53,5 +33,5 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
 }
 
-apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/install.gradle'
-apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/bintray.gradle'
+apply from: '../install.gradle'
+apply from: '../bintray.gradle'
